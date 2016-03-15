@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/18 17:35:31 by mdos-san          #+#    #+#              #
-#    Updated: 2016/03/15 15:30:36 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/03/15 15:47:09 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC_C=\
 
 SRC_O=$(SRC_C:.c=.o)
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re norm
 
 all: objects $(SRC_O:%=objects/%) $(NAME)
 
@@ -49,3 +49,6 @@ fclean: clean
 	rm -rf libcolor.a
 
 re: fclean all
+
+norm:
+	norminette srcs includes
